@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(145deg, #001f3f, #0074d9);
+  color: white;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #003366;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #cceeff;
+}
+
+.hand-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+.card-hand {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  height: 400px;
+}
+
+.card-hand li {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  width: 120px;
+  height: 180px;
+  background: repeating-linear-gradient(
+    45deg,
+    #003366,
+    #003366 10px,
+    #001f3f 10px,
+    #001f3f 20px
+  );
+  border: 4px solid white;
+  border-radius: 12px;
+  transform-origin: bottom center;
+  transform:
+    rotate(calc((var(--i) - 6) * 7deg))
+    translateX(calc((var(--i) - 6) * 60px));
+  transition: transform 0.3s ease, z-index 0.3s;
+  z-index: var(--i);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.card-hand li.active {
+  z-index: 100;
+  transform: rotate(0deg) translateY(300px) scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+.card-hand li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.card-hand .number {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.card-hand .title {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  font-weight: bold;
+}
+
+.card-hand .subtitle {
+  display: none;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+  max-width: 90%;
+  line-height: 1.2;
+}
+
+.card-hand li.active .subtitle {
+  display: block;
+}
