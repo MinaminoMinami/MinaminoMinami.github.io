@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第12章：物質の成り立ち</title>
+  <link rel="stylesheet" href="../chapter-style.css" />
+</head>
+<body class="p3-background">
+  <!-- 章タイトル・説明 -->
+  <div class="chapter-info">
+    <h1>第12章：物質の成り立ち</h1>
+    <p>この章では物質の構成や性質について学びます。</p>
+  </div>
+
+  <!-- 中央線 -->
+  <div class="diagonal-line"></div>
+
+  <!-- ホバー時の横断線 -->
+  <div class="hover-line" id="hoverLine"></div>
+
+  <!-- ボタン配置 -->
+  <div class="diagonal-container">
+    <a href="../topics/12-1.html" class="diagonal-button">12-1 物質の性質</a>
+    <a href="../topics/12-2.html" class="diagonal-button">12-2 原子と分子</a>
+    <a href="../topics/12-3.html" class="diagonal-button">12-3 イオンと化学式</a>
+  </div>
+
+  <!-- 戻るカード -->
+  <a href="../index.html" class="back-card">TOP</a>
+
+  <!-- スクリプト（横断線の位置制御） -->
+  <script>
+    const hoverLine = document.getElementById('hoverLine');
+    const buttons = document.querySelectorAll('.diagonal-button');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        const rect = btn.getBoundingClientRect();
+        hoverLine.style.top = `${rect.top}px`;
+        hoverLine.style.opacity = 0.2;
+      });
+      btn.addEventListener('mouseleave', () => {
+        hoverLine.style.opacity = 0;
+      });
+    });
+  </script>
+</body>
+</html>
