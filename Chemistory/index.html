@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>化学学習カードメニュー</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <header class="hero">
+    <h1 class="title">FAUST'S</h1>
+    <p class="subtitle">中学生のための化学学習サイト</p>
+    <a href="chapter/exercises.html" class="exercise-btn">EXERCISES</a>
+    <a href="secret.html" class="hidden-link" title="FAUST'S hidden gate"></a>
+  </header>
+
+  <div class="benzene-shape shape1"></div>
+  <div class="benzene-shape shape2"></div>
+  <main class="hand-container">
+    <div class="chapter-label">SELECT CHAPTER</div>
+    <ul class="card-hand">
+      <li style="--i: 0;"><a href="chapter/chapter1.html"><span class="number">1</span><span class="title">第1章</span><span class="subtitle">物質の成り立ち</span></a></li>
+      <li style="--i: 1;"><a href="chapter/chapter2.html"><span class="number">2</span><span class="title">第2章</span><span class="subtitle">化学変化と<br />反応式</span></a></li>
+      <li style="--i: 2;"><a href="chapter/chapter3.html"><span class="number">3</span><span class="title">第3章</span><span class="subtitle">状態変化と熱</span></a></li>
+      <li style="--i: 3;"><a href="chapter/chapter4.html"><span class="number">4</span><span class="title">第4章</span><span class="subtitle">水溶液とイオン</span></a></li>
+      <li style="--i: 4;"><a href="chapter/chapter5.html"><span class="number">5</span><span class="title">第5章</span><span class="subtitle">酸・アルカリと<br />中和</span></a></li>
+      <li style="--i: 5;"><a href="chapter/chapter6.html"><span class="number">6</span><span class="title">第6章</span><span class="subtitle">電気分解</span></a></li>
+      <li style="--i: 6;"><a href="chapter/chapter7.html"><span class="number">7</span><span class="title">第7章</span><span class="subtitle">化学電池</span></a></li>
+      <li style="--i: 7;"><a href="chapter/chapter8.html"><span class="number">8</span><span class="title">第8章</span><span class="subtitle">物質の性質</span></a></li>
+      <li style="--i: 8;"><a href="chapter/chapter9.html"><span class="number">9</span><span class="title">第9章</span><span class="subtitle">気体の性質</span></a></li>
+      <li style="--i: 9;"><a href="chapter/chapter10.html"><span class="number">10</span><span class="title">第10章</span><span class="subtitle">燃焼と<br />エネルギー</span></a></li>
+      <li style="--i: 10;"><a href="chapter/chapter11.html"><span class="number">11</span><span class="title">第11章</span><span class="subtitle">炭素と<br />有機化合物</span></a></li>
+      <li style="--i: 11;"><a href="chapter/chapter12.html"><span class="number">12</span><span class="title">第12章</span><span class="subtitle">プラスチックと<br />高分子</span></a></li>
+      <li style="--i: 12;"><a href="chapter/chapter13.html"><span class="number">13</span><span class="title">第13章</span><span class="subtitle">化学と人間生活</span></a></li>
+    </ul>
+  </main>
+  
+  <div class="bubble-container">
+    <!-- 任意の数の泡 -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+
+  <!-- hover管理スクリプト -->
+  <script>
+    const cards = document.querySelectorAll('.card-hand li');
+
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        if (card.classList.contains('cooldown')) return;
+
+        cards.forEach(c => {
+          c.classList.remove('active');
+        });
+
+        card.classList.add('active');
+        card.classList.add('cooldown');
+
+        setTimeout(() => {
+          card.classList.remove('cooldown');
+        }, 500);
+      });
+    });
+  </script>
+
+  <script>
+    const bubbles = document.querySelectorAll('.bubble');
+    bubbles.forEach(bubble => {
+      const size = Math.random() * 20 + 10;
+      const left = Math.random() * 100;
+      const delay = Math.random() * 5;
+      const duration = Math.random() * 10 + 5;
+
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${left}%`;
+      bubble.style.animationDelay = `${delay}s`;
+      bubble.style.animationDuration = `${duration}s`;
+    });
+  </script>
+</body>
+</html>
