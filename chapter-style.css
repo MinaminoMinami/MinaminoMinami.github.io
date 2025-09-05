@@ -259,8 +259,8 @@ body {
   }
 
 .video-wrapper {
-  width: 420px;   /* 大きめに調整 */
-  height: 740px;  /* 9:16 の縦長比率 */
+  width: 1260px;   /* 大きめに調整 */
+  height: 2220px;  /* 9:16 の縦長比率 */
   box-shadow: 0 0 20px rgba(0,0,0,0.2); /* 見栄え用（任意） */
   border-radius: 12px;                    /* 角丸（任意） */
   overflow: hidden;
