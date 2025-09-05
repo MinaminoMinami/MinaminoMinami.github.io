@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ポスター発表</title>
+  <link rel="stylesheet" href="../chapter-style.css" />
+</head>
+<body class="p3-background">
+  <!-- 章タイトル・説明 -->
+  <div class="chapter-info">
+    <h1>ポスター発表</h1>
+    <p>この章ではポスター発表の動画が閲覧できます。</p>
+  </div>
+
+  <!-- 中央線 -->
+  <div class="diagonal-line"></div>
+
+  <!-- ホバー時の横断線 -->
+  <div class="hover-line" id="hoverLine"></div>
+
+  <!-- 戻るカード -->
+  <a href="../index.html" class="back-card">TOP</a>
+
+  <script>
+    <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/cbvv0qGnezE" 
+            title="Short video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+</div>
+  </script>
+
+  <!-- スクリプト（横断線の位置制御） -->
+  <script>
+    const hoverLine = document.getElementById('hoverLine');
+    const buttons = document.querySelectorAll('.diagonal-button');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        const rect = btn.getBoundingClientRect();
+        hoverLine.style.top = `${rect.top}px`;
+        hoverLine.style.opacity = 0.2;
+      });
+      btn.addEventListener('mouseleave', () => {
+        hoverLine.style.opacity = 0;
+      });
+    });
+  </script>
+</body>
+</html>
