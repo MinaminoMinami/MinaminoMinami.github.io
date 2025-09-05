@@ -267,8 +267,8 @@ body {
 }
 
 .video-wrapper iframe {
-  width: 100%;
-  height: 100%;
+  width: 1260px;
+  height: 2220px;
   border: none;
   display: block;
 }
