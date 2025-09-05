@@ -1,8 +1,11 @@
 /* 背景＋Persona風ヘッダー */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+body {
+  display: flex;
+  justify-content: center;  /* 横方向中央 */
+  align-items: center;      /* 縦方向中央 */
+  min-height: 100vh;        /* 画面全体の高さを確保 */
+  margin: 0;                /* デフォルト余白を消す */
+  background: #f8f8f8;      /* 背景色はお好みで */
 }
 .p3-background {
   position: relative;
@@ -255,15 +258,18 @@ body, html {
     font-size: 1.2rem;
   }
 
-  .video-wrapper {
-    width: 315px;   /* iframe と同じ幅 */
-    height: 560px;  /* iframe と同じ高さ */
-    margin: 2rem auto; /* 上下余白2rem、左右は自動で中央寄せ */
-  }
+.video-wrapper {
+  width: 420px;   /* 大きめに調整 */
+  height: 740px;  /* 9:16 の縦長比率 */
+  box-shadow: 0 0 20px rgba(0,0,0,0.2); /* 見栄え用（任意） */
+  border-radius: 12px;                    /* 角丸（任意） */
+  overflow: hidden;
+}
 
-  .video-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    display: block; /* 中央寄せのための余白を消す */
-  }
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
 }
