@@ -258,17 +258,17 @@ body {
     font-size: 1.2rem;
   }
 
+/* iframeラッパー */
 .video-wrapper {
-  width: 1260px;   /* 大きめに調整 */
-  height: 2220px;  /* 9:16 の縦長比率 */
-  box-shadow: 0 0 20px rgba(0,0,0,0.2); /* 見栄え用（任意） */
-  border-radius: 12px;                    /* 角丸（任意） */
-  overflow: hidden;
+  width: 90vw;              /* 画面幅の90% */
+  height: 90vh;             /* 画面高さの90% */
+  max-width: 1260px;        /* 大きすぎないよう最大幅を制限 */
+  max-height: 2220px;       /* 最大高さを制限 */
 }
 
 .video-wrapper iframe {
-  width: 1260px;
-  height: 2220px;
+  width: 100%;
+  height: 100%;
   border: none;
   display: block;
 }
