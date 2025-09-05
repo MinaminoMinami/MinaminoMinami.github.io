@@ -208,6 +208,29 @@ body {
   transform: scale(1.05);
 }
 
+.poster-btn {
+  position: absolute;
+  top: 2rem;
+  right: 10rem; /* ← exercise-btn より少し左にずらす */
+  background: rgba(255, 255, 255, 0.1);
+  color: #cceeff;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #66ccff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+.poster-btn:hover {
+  background: #66ccff;
+  color: #003366;
+  transform: scale(1.05);
+}
+
+
 /* benzene-shape に変更 */
 .benzene-shape {
   position: absolute;
